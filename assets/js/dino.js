@@ -1,20 +1,20 @@
-const jumpsound = new Audio("assets/jump.mp3");
-const deathsound = new Audio("assets/death.mp3")
+const jumpsound = new Audio("assets/sounds/jump.mp3");
+const deathsound = new Audio("assets/sounds/death.mp3")
 
 class Dino {
     constructor() {
         this.still = new Image();
-        this.still.src = "assets/still.png"
+        this.still.src = "assets/images/still.png"
         this.run1 = new Image();
-        this.run1.src = "assets/run1.png";
+        this.run1.src = "assets/images/run1.png";
         this.run2 = new Image();
-        this.run2.src = "assets/run2.png";
+        this.run2.src = "assets/images/run2.png";
         this.crouch1 = new Image()
-        this.crouch1.src = "assets/crouch1.png";
+        this.crouch1.src = "assets/images/crouch1.png";
         this.crouch2 = new Image();
-        this.crouch2.src = "assets/crouch2.png";
+        this.crouch2.src = "assets/images/crouch2.png";
         this.dead = new Image();
-        this.dead.src = "assets/dead.png";
+        this.dead.src = "assets/images/dead.png";
 
         this.runspeed = 8;
         this.framecount = 0;
@@ -113,7 +113,6 @@ class Dino {
 
     checkCollision(obstacle) {
         if (((this.isJump == false && this.x+this.width-5 >= obstacle.x && this.x+this.width <= obstacle.x+obstacle.image[1])) || (this.isJump == true && this.x+this.width-27 >= obstacle.x && this.y+this.height-2 >= obstacle.image[3] && this.x+30 <= obstacle.x + obstacle.image[1])) {
-            console.log("collide");
             this.die();
         };
     };
